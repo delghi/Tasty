@@ -1,0 +1,22 @@
+{
+    "name": "gartner/pear-pager",
+    "description": "Fork of https://github.com/pear/Pager",
+    "homepage": "https://github.com/rsky/pear-pager",
+    "license": "BSD-3-Clause",
+    "autoload": {
+        "classmap": ["Pager.php", "Pager/"]
+    },
+    "include-path": ["/"],
+    "archive": {
+        "exclude": [
+            "/README",
+            "/example.php",
+            "/examples",
+            "/package.xml",
+            "/tests"
+        ]
+    },
+    "require": {
+        "php": ">=5.0.0"
+    }
+}

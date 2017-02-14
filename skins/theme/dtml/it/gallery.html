@@ -1,0 +1,55 @@
+{if $instances != null || $instance != null}
+<!-- Our Work
+======================================================================== -->
+<div id="our-work" class=" template-wrap cf" style=" padding-top:30px;"  >
+	<div class="parallax" style=" background-color:#f1c40f; background-position:top left; background-repeat:repeat; " ></div>
+	<div class="container">
+		<div class="row">
+			<div class="animation-wrapper col-md-12" style="margin:10px 0 10px;" >
+				<div class="heading-title-wrapper animated fadeInDown" style="-webkit-animation-duration: 900ms; -moz-animation-duration: 900ms; -o-animation-duration: 900ms;animation-duration: 900ms; animation-delay:0ms; -webkit-animation-delay:0ms; -moz-animation-delay:0ms;-o-animation-delay:0ms;">
+					<h2 class="title">Gallery</h2>
+					<span class="line-title" style="background-color:#8e44ad"></span>
+					<span class="sub-title">Le nostre immagini.</span>
+				</div><!-- END ET-HEADING-TITLE-BLOCK -->
+			</div>
+		</div>
+	</div>
+	<div class="clearfix" style="height:10px"></div>
+	<div id="aq-block-19-27" class="aq-block aq-block-oe_portfolio_block">
+		<div id="portfolio-page" class="portfolio-wrapper" style="margin:10px 0 0px;">
+			<div class="portfolio-cat-wrapper container ">
+				<div class="row">
+					<div class="col-md-12">
+						<ul class="portfolio-category" id="portfolio_filter">
+							<li>
+								<a id="all_click" href="#" data-filter="*">
+					        		<span class="icon-categories"  style="background-image:none"><i class="fa fa-align-justify"></i></span>All
+								</a>
+							</li>
+							{foreach from=$instances item=instance}
+							<li>
+								<a href="#" data-filter=".{$instance->name}">
+									<span class="icon-categories"  style="background-image:none"><i class="{$instance->icon}"></i></span>{$instance->name}                     
+								</a>
+							</li>	
+							{/foreach}
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="portfolio-list isotope animation-wrapper" id="portfolio_list">
+			{foreach from=$instances item=instance}
+					{foreach from=$instance->taxonomy_sys_image item=image}
+						<div class="item isotope-item {$instance->name}">
+							<a href="data:image/jpg;base64,{$image->id_sys_image->data}" class="colorbox" data-id="{$image->id_sys_image->id}">
+								<img width="480" height="480" src="data:image/jpg;base64,{$image->id_sys_image->data}" class="et-portfolio-thumbnail img-responsive wp-post-image" alt="Worms" />
+								<div class="hover"><span><i class="fa fa-search"></i></span></div>
+							</a>
+						</div>
+					{/foreach}
+			{/foreach}
+			</div>
+		</div>
+	</div>
+</div>	
+{/if}

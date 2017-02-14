@@ -1,0 +1,90 @@
+{if $instances != null || $instance != null}
+<div id="news" class=" template-wrap cf">
+    <div class="parallax" style=" background-color:#ffffff; background-position:top left; background-repeat:repeat; "></div>
+    <div class="container">
+        <div class="row">
+            <div class="animation-wrapper col-md-12" style="margin:30px 0 60px;">
+                <div class="heading-title-wrapper ">
+                    <h2 class="title">News</h2>
+                    <span class="line-title" style="background-color:#cc467c"></span>
+                    <span class="sub-title">Le nostre news.</span>
+                </div>
+            </div>
+            <!-- END ET-HEADING-TITLE-BLOCK -->
+            <div class="blog-wrapper animation-wrapper span12" style="margin:10px 0 50px">
+                <div class="row">
+	{$count=1}
+	{foreach from=$instances item=instance}
+	{if $instance->active != null}
+	{if $count == 1 || $count == 2}
+		<div class="col-md-6 et-blog-post show">
+			{foreach from=$instance->sys_news_sys_image item=image}
+			<div class="image-blog-wrapper">
+								<img width="1920" height="1280" src="data:image/jpg;base64,{$image->id_sys_image->data}" class="et-post-thumbnail img-responsive wp-post-image" alt="" />                    <div class="et-post-data-left mobile-blog">
+			                        <span class="et-post-month">{$istance->date}</span>
+			                    </div>
+			                </div>
+			{/foreach}
+	        <div class="et-post-data container">
+	            <div class="row">
+	                <div class="col-md-2 col-sm-2 et-post-data-left">
+	                    <span class="et-post-month">{$instance->date}</span>
+	                </div>
+	                <div class="col-md-10 col-sm-10 et-post-data-right">
+	                    <h1 class="title-blog"><a href="news.php?news={$instance->id}">{$instance->title}</a></h1>
+	                    <div class="et-post-info">
+	                        Post by admin
+	                    </div>
+	                    <div class="clearfix"></div>
+	                    <div class="et-post-excerpt">
+	                        <p>{$instance->body}</p>
+	                    </div>
+	                    <div class="clearfix"></div>
+	                    <a href="news.php?news={$instance->id}" class="read-more"><i class="fa fa-arrow-right"></i>&nbsp;&nbsp;Read more</a>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+		{$count = $count + 1}
+	{else}
+		<div class="col-md-6 et-blog-post" id="hideMe" style="display: none;">
+			{foreach from=$instance->sys_news_sys_image item=image}
+			<div class="image-blog-wrapper">
+								<img width="1920" height="1280" src="data:image/jpg;base64,{$image->id_sys_image->data}" class="et-post-thumbnail img-responsive wp-post-image" alt="" />                    <div class="et-post-data-left mobile-blog">
+			                        <span class="et-post-month">{$istance->date}</span>
+			                    </div>
+			                </div>
+			{/foreach}
+	        <div class="et-post-data container">
+	            <div class="row">
+	                <div class="col-md-2 col-sm-2 et-post-data-left">
+	                    <span class="et-post-month">{$instance->date}</span>
+	                </div>
+	                <div class="col-md-10 col-sm-10 et-post-data-right">
+	                    <h1 class="title-blog"><a href="news.php?news={$instance->id}">{$instance->title}</a></h1>
+	                    <div class="et-post-info">
+	                        Post by admin
+	                    </div>
+	                    <div class="clearfix"></div>
+	                    <div class="et-post-excerpt">
+	                        <p>{$instance->body}</p>
+	                    </div>
+	                    <div class="clearfix"></div>
+	                    <a href="news.php?news={$instance->id}" class="read-more"><i class="fa fa-arrow-right"></i>&nbsp;&nbsp;Read more</a>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	{/if}
+	{/if}
+	{/foreach}
+	<div class="clearfix"></div>
+    <div class="clearfix"></div>
+    <div class="view-all-blog-wrapper" id="hideMe"><a href="#news" class="view-all-blog" onclick="toggle_visibility('hideMe')"><span><i class="fa fa-plus"></i></span>View All News</a></div>
+</div>
+</div>
+<!-- END ET-BLOG-BLOCK-->
+</div>
+</div>
+</div>
+{/if}

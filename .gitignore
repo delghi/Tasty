@@ -1,0 +1,11 @@
+.DS_Store
+.placeholder
+desktop.ini
+*.cfg
+include/libs/smarty/templates_c/*
+include/libs/smarty/cache/*
+include/libs/smarty/configs/*
+*/*/*/*/search/*
+*/*/*/*/multiple/*
+*/*/*/*/single/*
+*/*/*/*/report/*

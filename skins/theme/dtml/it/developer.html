@@ -1,0 +1,51 @@
+{if $instances != null || $instance != null}
+<!-- Our Team
+======================================================================== -->
+<div id="our-team" class=" template-wrap cf color-white" style="padding-bottom:50px; padding-top:30px;">
+    <div class="parallax" style=" background-color:#3498db; background-position:top left; background-repeat:no-repeat; "></div>
+    <div class="container">
+        <div class="row">
+            <div class="animation-wrapper col-md-12" style="margin:10px 0 70px;">
+                <div class="heading-title-wrapper animated fadeInUp" style="-webkit-animation-duration: 900ms; -moz-animation-duration: 900ms; -o-animation-duration: 900ms;animation-duration: 900ms; animation-delay:0ms; -webkit-animation-delay:0ms; -moz-animation-delay:0ms;-o-animation-delay:0ms;">
+                    <h2 class="title">Our Team</h2>
+                    <span class="line-title" style="background-color:#206a9b"></span>
+                    <span class="sub-title">Gruppo di sviluppo.</span>
+                </div>
+            </div>
+            <!-- END ET-HEADING-TITLE-BLOCK -->
+            <div class="team-wrapper animation-wrapper span12" style="margin:10px 0 50px">
+                <div class="carousel-play" data-slide-speed="800" data-pagination-speed="800" data-auto="true" data-navigation="false" data-pagination="false" data-numbers="false" data-items="3" data-desktop="3" data-desktop-small="3" data-tablet="2" data-mobile="1">
+	{$count=0}
+	{$x=200}
+	{foreach from=$instances item=instance}
+		<div class="et-team-post item animated fadeInRight" style="-webkit-animation-duration: 900ms; -moz-animation-duration: 900ms; 				       -o-animation-duration: 900ms;animation-duration: {$count}ms; animation-delay:{$count}ms; -webkit-animation-delay:{$count}ms; -moz-animation-delay:{$count}ms;-o-animation-delay:{$count}ms;">
+				{foreach from=$instance->developer_sys_image item=image}
+					 <div class="image-team-wrapper">
+							<img width="300" height="300" src="data:image/jpg;base64,{$image->id_sys_image->data}" class="et-post-thumbnail img-responsive wp-post-image" alt="{$image->id_sys_image->alt}" /> 	</div>
+				{/foreach}
+				<div class="team-info">
+                	<h1 class="team-name">{$instance->name} {$instance->surname}</h1>
+					<span class="email">{$instance->email}</span></br>
+                	<span class="position">Developer</span>
+              	</div>
+		</div>
+{$count = $count + $x}
+{/foreach}
+</div>
+</div>
+<!-- END ET-BLOG-BLOCK-->
+</div>
+</div>
+</div>
+{/if}
+
+
+
+
+
+
+
+	
+		
+			
+				

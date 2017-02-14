@@ -1,0 +1,42 @@
+<?php
+require_once "entityGroup.php";
+require_once "entityEntities.php";
+require_once "entityUser.php";
+require_once "relationUserGroup.php";
+require_once "entityServiceCategory.php";
+require_once "entityService.php";
+require_once "relationServiceGroup.php";
+require_once "entityLog.php";
+require_once "entitySection.php";
+require_once "entityFile.php";
+require_once "entityImage.php";
+require_once "entityPage.php";
+require_once "entityMenu.php";
+require_once "entityNews.php";
+require_once "entitySlider.php";
+require_once "entityFileToFolder.php";
+require_once "entityVideo.php";
+require_once "relationImageSlider.php";
+require_once "relationSliderPage.php";
+$groupsEntity->connect();
+$entitiesEntity->connect();
+$usersEntity->connect();
+$usersGroupsRelation->connect();
+$servicecategoryEntity->connect();
+$servicesEntity->connect();
+$servicesGroupsRelation->connect();
+$logEntity->connect();
+$sectionEntity->connect();
+$pageEntity->connect();
+$menuEntity->connect();
+$newsEntity->connect();
+$fileEntity->connect();
+$imageEntity->connect();
+$sliderEntity->connect();
+$fileToFolderEntity->connect();
+$videoEntity->connect();
+
+$imageSliderRelation->connect();
+$sliderPageRelation->connect();
+
+require_once "init.php";

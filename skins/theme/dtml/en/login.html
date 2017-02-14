@@ -1,0 +1,32 @@
+{if $instance != null }
+<li class="dropdown menu-item menu-item-type-custom menu-item-object-custom" id="menuLogin">
+<a class="logout" href="logout.php" title="Logout">Logout {$instance->username}</a>
+</li>
+{else}
+
+<li class="dropdown menu-item menu-item-type-custom menu-item-object-custom" id="menuLogin">
+    <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown" id="navLogin">Login <b class="caret"></b></a>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="drop" style="padding:17px;">
+        <form action="login.php" method="post"> 
+            {literal}
+            <label>Login</label> 
+            <input name="username" id="username" type="text" placeholder="Username"  data-valid-min="3" title="Enter your username" required="">
+            <input name="password" id="password" type="password" placeholder="Password" title="Enter your password" required=""><br>
+            <button id="btnLogin" class="btn" type="submit" value="login" >Login</button>
+        </form>
+        <form><a href="#" title="Fast and free sign up!" id="btnNewUser" data-toggle="collapse" data-target="#formRegister">New User? Sign-up..</a></form>
+        <form id="formRegister" class="form collapse">
+            <input name="email" id="inputEmail" type="email" placeholder="Email" required="">
+            <input name="username" id="inputUsername" type="text" placeholder="Username" pattern="^[a-z,A-Z,0-9,_]{6,15}$" data-valid-min="6" title="Choose a username" required=""><br>
+            <input name="password" id="inputpassword" type="password" placeholder="Password" required=""> 
+            <input name="verify" id="inputVerify" type="password" placeholder="Password (again)" required=""><br>                                  
+            <button type="button" id="btnRegister" class="btn">Sign Up</button>
+            {/literal}
+        </form>
+        <a data-toggle="modal" role="button" href="#forgotPasswordModal">Forgot username or password?</a>
+        <a data-toggle="modal" role="button" href="#contactModal"><small>Need help? Contact us</small></a>
+    </ul>
+</li>
+{/if}
+
+

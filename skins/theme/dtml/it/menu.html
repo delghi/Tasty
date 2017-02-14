@@ -1,0 +1,7 @@
+{if $instances != null || $instance != null}
+
+{foreach from=$instances item=instance}
+<li id="menu-item-{$instance->id}" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-{$instance->id}"><a href="{$instance->link}">{$instance->entry}</a></li>
+{/foreach}
+	
+{/if}
